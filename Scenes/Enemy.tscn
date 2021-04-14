@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Asset/Font/LINCONS.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://Asset/Pict/corona_virus.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 67.8223, 70.8569 )
+
+[node name="Enemy" type="KinematicBody2D"]
+position = Vector2( 961.14, 186.627 )
+scale = Vector2( 0.679135, 0.600042 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 207.25, 194.5 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -93.0
+margin_top = -15.0
+margin_right = 92.0
+margin_bottom = 17.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]susu[/center]"
+text = "susu"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )

@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/DLCsector.gd" type="Script" id=1]
+[ext_resource path="res://Asset/Pict/DLC_wallpaper.jpg" type="Texture" id=2]
+[ext_resource path="res://Scenes/Node/ButtonDLC.tscn" type="PackedScene" id=3]
+
+[node name="Node" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 300.411 )
+scale = Vector2( 0.592593, 0.618129 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ch1" parent="." instance=ExtResource( 3 )]
+margin_left = 64.0
+margin_top = 512.0
+margin_right = 256.0
+margin_bottom = 572.0
+text = "Chapter 2 Unlocked"
+
+[node name="ch2" parent="." instance=ExtResource( 3 )]
+margin_left = 416.0
+margin_top = 512.0
+margin_right = 608.0
+margin_bottom = 572.0
+text = "Chapter 3 Locked"
+
+[node name="ch3" parent="." instance=ExtResource( 3 )]
+margin_left = 768.0
+margin_top = 512.0
+margin_right = 960.0
+margin_bottom = 572.0
+text = "Chapter 4 Locked"
+
+[node name="ch4" parent="." instance=ExtResource( 3 )]
+margin_left = 896.0
+margin_top = 8.0
+margin_right = 1016.0
+margin_bottom = 24.0
+text = "Back"
+script = null
+
+[node name="ch5" parent="." instance=ExtResource( 3 )]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 128.0
+margin_bottom = 24.0
+text = "Credits"
+script = null
+[connection signal="pressed" from="ch1" to="." method="_on_ch1_pressed"]
+[connection signal="pressed" from="ch4" to="." method="_on_ch4_pressed"]
